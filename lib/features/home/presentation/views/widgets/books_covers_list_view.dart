@@ -11,7 +11,7 @@ class BooksCoversListView extends StatelessWidget {
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
-        itemCount: 7,
+        itemCount: 8,
         itemBuilder: (context, index) {
           return const BookCoverItem();
         },

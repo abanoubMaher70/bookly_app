@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/books_covers_list_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -20,9 +21,9 @@ class HomeViewBody extends StatelessWidget {
                 CustomAppBar(),
                 SizedBox(height: 15),
                 BooksCoversListView(),
-                // SizedBox(height: 35),
-                // Text("Best Seller", style: Styles.textStyle20),
-                // SizedBox(height: 15),
+                SizedBox(height: 35),
+                Text("Best Seller", style: Styles.textStyle16),
+                SizedBox(height: 15),
               ],
             ),
           ),
