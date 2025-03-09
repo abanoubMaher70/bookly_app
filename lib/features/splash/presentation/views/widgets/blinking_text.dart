@@ -10,12 +10,12 @@ class BlinkingText extends StatefulWidget {
 
 class _BlinkingTextState extends State<BlinkingText>
     with SingleTickerProviderStateMixin {
-  late final AnimationController _controller;
+  late final AnimationController _animationController;
 
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
+    _animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 750),
     )..repeat(reverse: true);
@@ -23,12 +23,15 @@ class _BlinkingTextState extends State<BlinkingText>
 
   @override
   Widget build(BuildContext context) {
-    return FadeTransition(opacity: _controller, child: Text(widget.text));
+    return FadeTransition(
+      opacity: _animationController,
+      child: Text(widget.text),
+    );
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _animationController.dispose();
     super.dispose();
   }
 }
