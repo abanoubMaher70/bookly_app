@@ -15,10 +15,13 @@ class _BlinkingTextState extends State<BlinkingText>
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 750),
-    )..repeat(reverse: true);
+    intBlinkingAnimation();
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
   }
 
   @override
@@ -29,9 +32,10 @@ class _BlinkingTextState extends State<BlinkingText>
     );
   }
 
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
+  void intBlinkingAnimation() {
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 750),
+    )..repeat(reverse: true);
   }
 }
