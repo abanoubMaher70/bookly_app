@@ -1,8 +1,7 @@
 // import 'package:bookly/core/utility/app_routes.dart';
-// import 'package:bookly/core/utility/styles.dart';
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 // import 'package:go_router/go_router.dart';
-// import 'package:iconly/iconly.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
@@ -17,11 +16,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(
-            "Bookly App",
-            // style: Styles.appName,
-            style: TextStyle(fontSize: 22),
-          ),
+          const Text("Bookly App", style: Styles.appName),
           IconButton(
             onPressed: () {
               // GoRouter.of(context).push(AppRoutes.kSearchView);

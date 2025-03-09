@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_list_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/books_covers_list_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,7 @@ class HomeViewBody extends StatelessWidget {
             ),
           ),
         ),
-        // SliverFillRemaining(child: BestSellerListView()),
+        SliverFillRemaining(child: BestSellerListView()),
       ],
     );
   }
