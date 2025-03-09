@@ -19,7 +19,7 @@ class SplashViewBody extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SvgPicture.asset(AppAssets.logo, height: 150),
+          SvgPicture.asset(AssetsImage.logo, height: 150),
           SizedBox(height: 35),
           BlinkingText(text: 'Read Free Books'),
         ],
