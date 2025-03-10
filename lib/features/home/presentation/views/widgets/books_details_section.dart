@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/core/widgets/custom_button.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_cover_item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_rating.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ class BookDetailsSection extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          width: MediaQuery.of(context).size.width * 0.525,
+          width: MediaQuery.sizeOf(context).width * 0.525,
           child: const BookCoverItem(),
         ),
         const SizedBox(height: 25),
@@ -34,10 +35,7 @@ class BookDetailsSection extends StatelessWidget {
         const SizedBox(height: 16),
         const Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // PricingButton(),
-            // BookPreviewButton(),
-          ],
+          children: [PricingButton(), BookPreviewButton()],
         ),
       ],
     );
