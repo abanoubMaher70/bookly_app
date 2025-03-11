@@ -1,6 +1,8 @@
 // import 'package:bookly/core/utility/app_routes.dart';
+import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 // import 'package:go_router/go_router.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -19,7 +21,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           const Text("Bookly App", style: Styles.appName),
           IconButton(
             onPressed: () {
-              // GoRouter.of(context).push(AppRoutes.kSearchView);
+              GoRouter.of(context).push(AppRouter.kSearchView);
             },
             icon: const Icon(Icons.search, color: Colors.white, size: 28),
           ),
