@@ -2,14 +2,14 @@ import 'package:equatable/equatable.dart';
 
 import 'item.dart';
 
-class HomeModel extends Equatable {
+class BookModel extends Equatable {
   final String? kind;
   final int? totalItems;
   final List<Item>? items;
 
-  const HomeModel({this.kind, this.totalItems, this.items});
+  const BookModel({this.kind, this.totalItems, this.items});
 
-  factory HomeModel.fromJson(Map<String, dynamic> json) => HomeModel(
+  factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
     kind: json['kind'] as String?,
     totalItems: json['totalItems'] as int?,
     items:
