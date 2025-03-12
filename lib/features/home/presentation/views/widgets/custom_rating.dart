@@ -12,7 +12,7 @@ class CustomRating extends StatelessWidget {
         Icon(Icons.star, color: Colors.amber),
         SizedBox(width: 5),
         Text("4.8", style: Styles.textStyle20),
-        SizedBox(width: 3),
+        SizedBox(width: 5),
         Text("(2390)", style: Styles.textStyle14),
       ],
     );

@@ -18,7 +18,7 @@ class BestSellerListViewItem extends StatelessWidget {
         height: 130,
         child: const Row(
           children: [
-            BookCoverItem(borderRadius: 8),
+            BookCoverItem(borderRadius: 4),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
