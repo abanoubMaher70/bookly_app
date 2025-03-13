@@ -18,14 +18,12 @@ class HomeRepoImpl extends HomeRepo {
             '/volumes?Filtering=free-ebooks&Sorting=newest&q=subject:programming',
       );
 
-      // final books = (response['items'] as List)
-      //     .map((e) => BookModel.fromJson(e))
-      //     .toList();
+      // final books = (response['items'] as List).map((e) => BookModel.fromJson(e)).toList();
 
-      List<BookModel> books = [];
-      books.add(BookModel.fromJson(response));
+      List<BookModel> newestBooks = [];
+      newestBooks.add(BookModel.fromJson(response));
 
-      return right(books);
+      return right(newestBooks);
     } catch (e) {
       if (e is DioException) {
         return left(ServerFailure.fromDioException(e));
@@ -36,7 +34,22 @@ class HomeRepoImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() {
-    throw UnimplementedError();
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
+    try {
+      final response = await apiService.get(
+        endPoint: '/volumes?Filtering=free-ebooks&q=subject:programming',
+      );
+
+      List<BookModel> featuredBooks = [];
+      featuredBooks.add(BookModel.fromJson(response));
+
+      return right(featuredBooks);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
+
+      return left(ServerFailure(e.toString()));
+    }
   }
 }
