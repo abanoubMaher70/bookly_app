@@ -1,10 +1,12 @@
 import 'package:bookly_app/core/constants.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
+import 'package:bookly_app/core/utils/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(kPrimaryLightTheme);
+  setupServiceLocator();
   runApp(const BooklyApp());
 }
 
