@@ -13,7 +13,7 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         SizedBox(
           width: MediaQuery.sizeOf(context).width * 0.525,
-          child: const BookCoverItem(),
+          // child: const BookCoverItem(),
         ),
         const SizedBox(height: 25),
         const Text(

@@ -16,9 +16,9 @@ class BestSellerListViewItem extends StatelessWidget {
         margin: const EdgeInsets.only(left: 16, right: 16, bottom: 20),
         width: double.infinity,
         height: 130,
-        child: const Row(
+        child: Row(
           children: [
-            BookCoverItem(borderRadius: 4),
+            // BookCoverItem(borderRadius: 4),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

@@ -13,7 +13,9 @@ class SimilarBooksListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 5,
         itemBuilder: (context, index) {
-          return const BookCoverItem(borderRadius: 8);
+          return null;
+
+          // return const BookCoverItem(borderRadius: 8);
         },
       ),
     );
