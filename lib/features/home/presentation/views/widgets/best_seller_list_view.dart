@@ -13,9 +13,8 @@ class BestSellerListView extends StatelessWidget {
     return BlocBuilder<NewestBooksCubit, NewestBooksState>(
       builder: (context, state) {
         if (state is NewestBooksSuccess) {
-          return ListView.builder(
+          return SliverList.builder(
             itemCount: state.books.first.items?.length ?? 0,
-            physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               return BestSellerListViewItem(
                 books: state.books.first.items![index],
@@ -23,9 +22,11 @@ class BestSellerListView extends StatelessWidget {
             },
           );
         } else if (state is NewestBooksFailure) {
-          return CustomErrorMessage(message: state.message);
+          return SliverToBoxAdapter(
+            child: CustomErrorMessage(message: state.message),
+          );
         } else {
-          return const CustomProgressIndicator();
+          return SliverToBoxAdapter(child: CustomProgressIndicator());
         }
       },
     );
