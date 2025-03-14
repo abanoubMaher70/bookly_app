@@ -13,9 +13,7 @@ class HomeRepoImpl extends HomeRepo {
   @override
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
-      final response = await apiService.get(
-        endPoint: '/volumes?q=Harry_Potter',
-      );
+      final response = await apiService.get(endPoint: '/volumes?q=comics');
 
       List<BookModel> featuredBooks = [];
       featuredBooks.add(BookModel.fromJson(response));
@@ -41,6 +39,28 @@ class HomeRepoImpl extends HomeRepo {
       featuredBooks.add(BookModel.fromJson(response));
 
       return right(featuredBooks);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
+
+      return left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
+    String category,
+  ) async {
+    try {
+      final response = await apiService.get(
+        endPoint: '/volumes?Filtering=free-ebooks&Sorting=relevance&q=comics',
+      );
+
+      List<BookModel> similarBooks = [];
+      similarBooks.add(BookModel.fromJson(response));
+
+      return right(similarBooks);
     } catch (e) {
       if (e is DioException) {
         return left(ServerFailure.fromDioException(e));
