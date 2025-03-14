@@ -1,4 +1,5 @@
 import 'package:bookly_app/features/home/data/models/book_model/item.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class BookCoverItem extends StatelessWidget {
@@ -9,16 +10,14 @@ class BookCoverItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final thumbnailUrl = book.volumeInfo?.imageLinks?.thumbnail ?? '';
-    return AspectRatio(
-      aspectRatio: 0.75,
-      child: Container(
-        margin: const EdgeInsets.only(right: 16),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(borderRadius),
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: NetworkImage(thumbnailUrl),
-          ),
+    return Padding(
+      padding: const EdgeInsets.only(right: 16),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(borderRadius),
+
+        child: AspectRatio(
+          aspectRatio: 0.75,
+          child: CachedNetworkImage(imageUrl: thumbnailUrl, fit: BoxFit.cover),
         ),
       ),
     );

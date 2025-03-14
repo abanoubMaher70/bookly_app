@@ -1,4 +1,3 @@
-import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'package:flutter/material.dart';
 
 class SearchResultsListView extends StatelessWidget {
@@ -11,7 +10,9 @@ class SearchResultsListView extends StatelessWidget {
         itemCount: 5,
         physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) {
-          return const BestSellerListViewItem();
+          return null;
+
+          // return const BestSellerListViewItem();
         },
       ),
     );
