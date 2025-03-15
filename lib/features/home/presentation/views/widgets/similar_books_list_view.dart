@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bookly_app/core/widgets/custom_error_message.dart';
 import 'package:bookly_app/core/widgets/custom_progress_indicator.dart';
 import 'package:bookly_app/features/home/presentation/manager/similer_books_cubit/similer_books_cubit.dart';
@@ -18,11 +20,11 @@ class SimilarBooksListView extends StatelessWidget {
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
-              itemCount: 5,
+              itemCount: state.books.first.items?.length ?? 0,
               itemBuilder: (context, index) {
                 return BookCoverItem(
                   borderRadius: 8,
-                  book: state.books[index].items![index],
+                  book: state.books.first.items![index],
                 );
               },
             ),
